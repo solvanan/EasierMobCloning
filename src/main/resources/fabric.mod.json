@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "easiermobcloning",
+  "version": "${version}",
+  "name": "EasierMobCloning",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/easiermobcloning/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.solvanan.easiermobcloning.client.EasiermobcloningDataGenerator"
+    ],
+    "client": [
+      "com.solvanan.easiermobcloning.client.EasiermobcloningClient"
+    ],
+    "main": [
+      "com.solvanan.easiermobcloning.Easiermobcloning"
+    ]
+  },
+  "mixins": [
+    "easiermobcloning.mixins.json",
+    {
+      "config": "easiermobcloning.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
